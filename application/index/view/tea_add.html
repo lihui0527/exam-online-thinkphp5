@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table align="center" border="1">
+    <form action="{:url('tea/tea_add')}" method="post" enctype="multipart/form-data">
+
+        <tr>
+            <td>
+                姓名：<input type="text" name="username" >
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                密码：<input type="password" name="password"  >
+            </td>
+        </tr>
+        <tr>
+            <td>
+                重复密码：<input type="password" name="password1">
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>
+                头像:<input type="file" name="headimg" id="headimg" class="headimg">
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <input type="reset" value="重置" name="bt1" >
+
+                <input type="submit" value="提交" name="bt2"></td>
+        </tr>
+    </form>
+
+</table>
+</body>
+</html>

@@ -13,4 +13,17 @@ class Xs extends Model {
         $info=$this->insert(['username'=>$username,'password'=>md5($password),'headimg'=>$foname]);
         return $info;
     }
+    public function xslb(){
+        $info=db('xs')->order('mid desc')->select();
+        return $info;
+    }
+    public function sc($mid){
+        $info=db('xs')->where('mid',$mid)->delete();
+        return $info;
+    }
+    public  function  bj($mid,$username,$foname){
+        $info=db('xs')->where('mid',$mid)->update(['username'=>$username,'headimg'=>$foname]);
+        return $info;
+
+    }
 }

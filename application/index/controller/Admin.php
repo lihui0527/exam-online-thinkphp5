@@ -27,7 +27,7 @@ class Admin extends Controller{
         $foname=input('foname');
         $headimg = request()->file('headimg');
         if($headimg){
-            $fo = $headimg->move('../image');
+            $fo = $headimg->move('./static');
             $foname=$fo->getSaveName();
         }
 
@@ -35,15 +35,15 @@ class Admin extends Controller{
         $userlist=model('xs');
 
         if($password!=$password1){
-            $this->error('俩次密码不一致请重新输入','index/index_1');
+            $this->error('俩次密码不一致请重新输入','admin/student_add');
         }
         $info=$userlist->zc($username,$password,$foname);
 
         if($info){
-            $this->success('注册成功','index/index_3');
+            $this->success('注册成功','admin/yhgl');
         }
         else{
-            $this->error('注册失败','index/index_1');
+            $this->error('注册失败','admin/yhgl');
         }
         /* if($userlist->validate(true)->allowField(true)->save($data)){
              $this->success('注册成功','index/index_3');
@@ -53,7 +53,11 @@ class Admin extends Controller{
 
     }
     public function student_select()
-    {     $info=model('xs');
-        return $this->fetch('/stu_add');
+
+    {   $mid=input();
+        $info=model('xs');
+        $msginfo=$info->xslb($mid);
+        $this->assign('message',$msginfo);
+        return $this->fetch('/xslb');
     }
 }
