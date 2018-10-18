@@ -1,6 +1,7 @@
 <?php
 namespace app\index\controller;
 use think\Controller;
+use Url;
 class Index extends Controller
 {//入口
     public function index()
