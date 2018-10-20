@@ -7,7 +7,7 @@
 <body>
 <table align="center" border="1">
     <form action="" method="post" enctype="multipart/form-data">
-        <h1 align="center">学生信息</h1>
+        <h1 align="center">教师信息</h1>
         <tr>
             <td width="200" align="right">
                 姓名
@@ -20,7 +20,7 @@
             {volist name="message" id="list"}
             <td>{$list.username}</td>
             <td>
-                <img src="__STATIC__/{$list.headimg}" width="230" height="200">
+                <img src="/class1-2/public/static/{$list.headimg}" width="230" height="200">
             </td>
             <td><a href="{:url('tea/tea_delete')}?uid={$list.uid}">删除</a>
                 <a href="{:url('tea/tea_bj')}?uid={$list.uid}">编辑</a></td>
