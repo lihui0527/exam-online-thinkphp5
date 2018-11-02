@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<br><tr>
+    {volist name="message" id="list"}
+    {eq
+    name="$Think.session.uid" value="$list.uid"}
+    <td>{$list.comment}</td></br>
+    <td>{$list.a}</td></br>
+    <td>{$list.b}</td></br>
+
+    <td><a href="{:url('tea/exam_judge_delete')}?vid={$list.vid}">删除</a>
+        <a href="{:url('tea/exam_much_bj')}?vid={$list.vid}">编辑</a>
+        <a href="{:url('tea/exam_judge_add')}">继续添加</a>
+        </br>
+    </td>
+{/eq}
+    {/volist}</tr>
+{$page}
+</body>
+</html>

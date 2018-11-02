@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="{:url('tea/add_exam')}">返回</a>
+<form action="{:url('tea/exam_add1')}" method="post" enctype="multipart/form-data">
+    <h3 align="center">添加题目</h3>
+    <br >
+        <td>题目：</td></br>
+        <td><textarea rows="5" cols="30" name="comment" >2、data=rand(1000,2);x=data(:,1);
+            y=data(:,2);II=find(y<sqrt(x)&y>x.^2);的功能是
+        </textarea></td></br>
+        <td>题目难度：
+            简单：<input type="radio" name="nandu" value="1">
+            一般：<input type="radio" name="nandu" value="2">
+            困难：<input type="radio" name="nandu" value="3"></br>
+        </td>
+        <td>知识点介绍：</td></br>
+        <td><textarea rows="3" cols="20" name="dian" >123</textarea></td></br>
+        <td>
+
+            选项A：<input type="text" name="a"  value="(A) 统计2000个随机点中落入特殊区域的点的索引值；"></br>
+
+            选项B：<input type="text" name="b"  value="(B) 统计1000个随机点落入特殊区域的点的索引值；"></br>
+
+            选项C：<input type="text" name="c" value="(C) 模拟2000个随机点落入特殊区域的过程；"></br>
+
+        </td>
+    <td>正确答案：</td></br>
+    A:<input type="radio" name="daan" value="1" >
+    B：<input type="radio" name="daan" value="2">
+    C：<input type="radio" name="daan" value="3"></br>
+    <td>题目分数：</td>
+    4分:<input type="radio" name="score" value="4">
+    6分：<input type="radio" name="score" value="6"></br>
+    </tr>
+    <tr>
+        <td>
+            <input type="reset" value="重置" name="bt1" ></td>
+        <td>
+            <input type="submit" value="提交" name="bt2"></td>
+    </tr>
+</form>
+
+</body>
+</html>

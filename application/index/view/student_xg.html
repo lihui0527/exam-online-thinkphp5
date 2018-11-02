@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="{:url('xs/student_xg')}?mid={$mid}" method="post" enctype="multipart/form-data">
+    <h1 align="center">学生信息修改</h1>
+
+
+
+        <td class="label" align="center">学生姓名：</td>
+        <td><input type="text" name="username" value=""size="30" /></td></br>
+
+    <td>
+        头像:<input type="file" name="headimg" id="headimg" class="headimg">
+    </td>
+    <div class="button-div">
+        <input type="submit" value=" 确定 " class="button"/>
+        <input type="reset" value=" 重置 " class="button" />
+    </div>
+    </tr>
+
+
+
+
+</form>
+</body>
+</html>
