@@ -1,0 +1,20 @@
+{include file="common/top2"}
+<body>主观题
+    <form action="{:url('student/fenshu')}" method="post" enctype="multipart/form-data"></form>
+    <form action="{:url('student/fenshu')}" method="post" enctype="multipart/form-data">
+    {volist name="message" id="list"}
+
+    <td>{$list.comment}</td></br>
+    答：<td><textarea rows="3" cols="10" name="zhu_daan[]" ></textarea></td></br>
+
+
+    {/volist}</tr>
+    <tr>
+        <td>
+            <input type="reset" value="重置" name="bt1" ></td>
+        <td>
+            <input type="submit" value="提交试卷" name="bt2"></td>
+
+    </tr>
+</form>
+{include file="common/foot"}

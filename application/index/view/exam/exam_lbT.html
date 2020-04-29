@@ -1,0 +1,21 @@
+{include file="common/top1"}
+                <legend>题目列表</legend>
+                <div class="layui-field-box">
+                    
+                    <hr>
+                    <br><tr>
+                            {volist name="message" id="list"}
+                                <td>{$list.comment}</td></br>
+                                <td>{$list.a}</td></br>
+                                <td>{$list.b}</td></br>
+                                <td>{$list.c}</td></br>
+                            <td><a href="{:url('tea1/exam_delete')}?kid={$list.kid}">删除</a>
+                                <a href="{:url('tea1/exam_bj')}?kid={$list.kid}">编辑</a>
+                                <a href="{:url('tea1/add_exam2')}">继续添加</a>
+                                </br>
+                            </td>
+                            
+                            {/volist}</tr>
+                </div>
+            </fieldset>
+            {include file="common/foot"}

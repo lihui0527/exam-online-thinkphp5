@@ -1,0 +1,58 @@
+{include file="common/top"}
+        <legend>课程查看</legend>
+        <div class="layui-field-box">
+          <form class="layui-form" action="">
+            <div class="layui-form-item" style="text-align:center;">
+              <div class="layui-inline">
+                <div class="layui-input-inline">
+                  <input autocomplete="off" class="layui-input" placeholder="课程查看" type="text" name="name" value="">
+                </div>
+              </div>
+            </div>
+          </form>
+          <hr>
+          <hr>
+          <table class="layui-table">
+              <colgroup>
+                  <col width="150">
+                  <col width="150">
+                  <col width="200">
+                  <col>
+                  <col>
+              </colgroup>
+              <thead>
+                  <tr>
+                  <th>课程名</th>
+                  <th>课程教师</th>
+                  <th>课程学生</th>
+                  <th>课程描述</th>
+                  <th>课程增加时间</th>
+                  <th>课程开始时间</th>
+                  <th style="text-align:center;">操作</th>
+                  </tr> 
+              </thead>
+              <tbody>
+                {volist name="message" id="list"}
+                    <tr>
+                    <td>{$list.kc_name}</td>
+                    <td>{$list.kc_tea}</td>
+                    <td>{$list.kc_student}</td>
+                    <td>{$list.kc_describe}</td>
+                    <td>{:date('Y-m-d h:i:sa',$list.kc_addtime)}</td>
+                    <td>{$list.kc_starttime}</td>
+                    <td>
+                            <div class="layui-btn-group">
+                                    <a class="layui-btn layui-btn-xs layui-btn-danger dw-delete" href="{:url('admin/kc_delete')}?id={$list.id}">
+                                        <i class="layui-icon">&#xe640;</i>删除</a>
+                                    <a class="layui-btn layui-btn-xs layui-btn-danger dw-delete" href="{:url('admin/kc_bj')}?id={$list.id}">
+                                        <i class="layui-icon">&#xe642;</i>编辑</a></td>
+                            </div>
+                    </tr>
+                {/volist}
+
+              </tbody>
+          </table>
+        </div>
+    </fieldset>
+{$page}
+        {include file="common/foot"}

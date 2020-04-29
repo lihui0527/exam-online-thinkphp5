@@ -1,0 +1,29 @@
+{include file="common/top"}
+            <legend>修改教师信息</legend>
+            <div class="layui-field-box">
+                
+                <hr>
+                <form class="layui-form" action="{:url('tea/tea_xg')}?uid={$uid}">
+                        
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" name="username">教师姓名：</label>
+                        <div class="layui-input-block" >
+                        <input type="text" name="username" >    
+                        </div>
+                    </div>
+                    <div class="layui-form-item">    
+                        <div class="layui-input-block">
+                        头像:<input type="file" name="headimg" id="headimg" class="headimg">
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-form-text">
+                            <button type="submit" class="layui-btn" lay-submit lay-filter="formDemo" name="bt2">立即提交</button>
+                            <button type="reset" class="layui-btn layui-btn-primary"  name="bt1">重置</button>
+                        <div class="layui-input-block">
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+        </fieldset>
+        {include file="common/foot"}

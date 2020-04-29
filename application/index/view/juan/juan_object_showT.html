@@ -1,0 +1,20 @@
+{include file="common/top1"}
+<legend>主观题查看</legend>            
+<div class="layui-field-box">
+<body>主观题{volist name="message3" id="list"}
+<form action="{:url('juan_select4')}" method="post" enctype="multipart/form-data">
+
+    <td>{$list.sid}{$list.comment}</td></br>
+
+
+
+    {/volist}</tr>
+    <tr>
+        <td>
+            <input type="reset" value="重置" name="bt1" ></td>
+        <td>
+            <input type="submit" value="下一部分" name="bt2"></td>
+
+    </tr>
+</form>
+{include file="common/foot"}

@@ -1,0 +1,20 @@
+{include file="common/top1"}
+<legend>答卷批改</legend>
+<div class="layui-field-box" >
+    <form action="{:url('juan1/pg')}" method="post" enctype="multipart/form-data">
+        <h1 align="center">选择学生</h1>
+        {volist name="message" id="list"}
+        <tr>
+            <td>
+                名字：{$list.kc_student}
+            </td>
+
+            <td>
+                <a href="{:url('juan1/pg')}?kc_student={$list.kc_student}">批改试题</a></td></br>
+        </tr>
+
+
+        {/volist}
+    </form>
+</div>
+{include file="common/foot"}

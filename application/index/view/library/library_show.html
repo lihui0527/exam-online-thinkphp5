@@ -1,0 +1,19 @@
+{include file="common/top1"}
+<h3 align="center">试卷库</h3>
+<br>
+<div>
+    {volist name="message" id="list"}
+{$list.xid}</br>
+<tr>科目：</tr>
+    {eq
+    name="$Think.session.uid" value="$list.uid"}
+    <td>{$list.kemu}</td></br>
+教师：<td>{$list.username}</td></br>
+    {/eq}
+    <a href="{:url('juan/juan_add')}?xid={$list.xid}">添加试题</a></br>
+    <a href="{:url('juan/juan_select')}?xid={$list.xid}">查看试题</a></br>
+    <a href="{:url('juan/shijuan_delete')}?xid={$list.xid}">删除试卷</a></br>
+    {/volist}
+    {$page}
+</div>
+{include file="common/foot"}

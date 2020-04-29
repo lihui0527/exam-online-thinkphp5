@@ -1,0 +1,20 @@
+{include file="common/top2"}
+<legend>选择科目</legend>
+<form action="{:url('student/fenshu_select')}" method="post" enctype="multipart/form-data"></form>
+<form action="{:url('student/fenshu_select')}" method="post" enctype="multipart/form-data">
+    <tr>
+        <td>科目：</br>
+            数学：<input type="radio" name="kemu" value="数学"></br>
+            语文：<input type="radio" name="kemu" value="语文"></br>
+            英语：<input type="radio" name="kemu" value="英语"></br>
+            政治：<input type="radio" name="kemu" value="政治"></br>
+        </td>
+    </tr></br>
+    <tr>
+        <td>
+            <input type="reset" value="重置" name="bt1" ></td></br>
+        <td>
+            <input type="submit" value="查询" name="bt2"></td>
+    </tr>
+</form>
+{include file="common/foot"}

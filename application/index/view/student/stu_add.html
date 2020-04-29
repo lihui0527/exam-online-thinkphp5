@@ -1,0 +1,39 @@
+{include file="common/top"}
+            <legend>添加学生</legend>
+            <div class="layui-field-box">
+                
+                <hr>
+                <form class="layui-form" action="{:url('admin/xstj')}" method="POST" enctype="multipart/form-data">
+                        
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" name="username">姓名：</label>
+                        <div class="layui-input-block" >
+                        <input type="text" name="username" >    
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" name="username">密码：</label>
+                        <div class="layui-input-block" >
+                        <input type="password" name="password"  >
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">重复密码：</label>
+                        <div class="layui-input-inline">
+                        <input type="password" name="password1">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">    
+                        <div class="layui-input-block">
+                        头像:<input type="file" name="headimg" id="headimg" class="headimg">
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-form-text">
+                            <input type="submit" class="layui-btn" name="bt2"></input>
+                            <input type="reset" class="layui-btn layui-btn-primary"  name="bt1"></input>
+                        </div>
+                    
+                </form>
+            </div>
+        </fieldset>
+        {include file="common/foot"}

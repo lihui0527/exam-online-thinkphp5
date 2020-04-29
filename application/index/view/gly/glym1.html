@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="__STATIC__/css/layui.css">
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+  <div class="layui-header">
+    <div class="layui-logo">在线考试系统</div>
+    <!-- 头部区域（可配合layui已有的水平导航） -->
+    <ul class="layui-nav layui-layout-left">
+      <li class="layui-nav-item"><a href="admin.html">用户列表</a></li>
+    </ul>
+    <ul class="layui-nav layui-layout-right">
+      <li class="layui-nav-item">
+        <a href="javascript:;">
+          {volist name="message" id="list"}
+          <img src="__STATIC__/{$list.headimg}" class="layui-nav-img">
+          {$list.username}
+          {/volist}
+          
+        </a>
+        <dl class="layui-nav-child">
+          <dd><a href="">基本资料</a></dd>
+          <dd><a href="">安全设置</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item"><a href="{:url('index/index')}">退出登陆</a></li>
+    </ul>
+  </div>
+  <div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+      <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+        <li class="layui-nav-item"><a href="">控制台</a></li>
+        <li class="layui-nav-item">
+            <a href="javascript:;">课堂管理</a>
+            <dl class="layui-nav-child">
+                <dd><a href="{:url('Admin/kc_addT')}">添加课程</a></dd>
+                <dd><a href="{:url('Admin/kc_showT')}">查看课程</a></dd>
+            </dl>
+        </li>
+        <li class="layui-nav-item">
+            <a href="javascript:;">题库管理</a>
+            <dl class="layui-nav-child">
+                <dd><a href="{:url('tea1/add_exam3')}">添加题目</a></dd>
+                <dd><a href="{:url('tea1/exam_show')}">查看题库</a></dd>
+                <dd><a href="{:url('tea1/add_exam')}">其他功能</a></dd>
+            </dl>
+        </li>
+        <li class="layui-nav-item">
+                <a href="javascript:;">试卷库管理</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="{:url('library1/library')}">创建试卷</a></dd>
+                    <dd><a href="{:url('library1/library_select')}">查看试卷</a></dd>
+                </dl>
+        </li>
+        <li class="layui-nav-item">
+            <a href="javascript:;">答卷库管理</a>
+            <dl class="layui-nav-child">
+                <dd><a href="{:url('Dajuant/xs_list')}">查看试卷</a></dd>
+            </dl>
+        </li>
+        <li class="layui-nav-item">
+            <a href="javascript:;">答卷批改</a>
+            <dl class="layui-nav-child">
+                <dd><a href="{:url('juan1/pg1')}">主观题批改</a></dd>
+            </dl>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="layui-body">
+    <!-- 内容主体区域 -->
+    <div style="padding: 15px;">
+        <fieldset class="layui-elem-field">
+            
+            <legend>教师功能</legend>
+            <div class="layui-field-box">
+                
+                <hr>
+                <form class="layui-form" action="">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label"><a href="">欢迎进入~~     教师权限</a></label>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label"><a href=""></a></label>
+                    </div>
+                </form>
+                {include file="common/foot"}

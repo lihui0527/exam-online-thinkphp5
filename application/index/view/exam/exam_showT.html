@@ -1,0 +1,30 @@
+{include file="common/top1"}
+<legend>题目搜索</legend>
+<form action="{:url('tea1/exam_select')}" method="post" enctype="multipart/form-data">
+    <h3 align="center">题目</h3>
+    <div class="layui-form-item">题目难度：</div>
+    <td><div class="layui-form-item">
+        简单：<input type="radio" name="nandu" value="1">
+        一般：<input type="radio" name="nandu" value="2">
+        困难：<input type="radio" name="nandu" value="3"></br>
+    </td>
+    </div>
+    <div class="layui-form-item">
+    单选题:<input type="radio" name="lei" value="4"></div>
+    <div class="layui-form-item">
+    多选题：<input type="radio" name="lei" value="5"></div>
+    <div class="layui-form-item">
+    判断题：<input type="radio" name="lei" value="6"></div>
+    <div class="layui-form-item">
+    主观题：<input type="radio" name="lei" value="7"></div>
+    
+    <div class="layui-form-item layui-form-text">
+        <input type="submit" class="layui-btn" name="bt2"></input>
+        <input type="reset" class="layui-btn layui-btn-primary"  name="bt1"></input>
+    </div>
+</form>   
+<!-- <a href="{:url('tea1/exam_show')}">单选题</a>
+<a href="{:url('tea1/exam_much_show')}">多选题</a>
+<a href="{:url('tea1/exam_judge_show')}">判断题</a>
+<a href="{:url('tea1/exam_object_show')}">主观题</a> -->
+{include file="common/foot"}

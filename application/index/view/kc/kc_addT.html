@@ -1,0 +1,49 @@
+{include file="common/top1"}
+            <legend>添加课程</legend>
+            <div class="layui-field-box">
+                
+                <hr>
+                <form class="layui-form" action="{:url('admin/kc_add11')}" method="post" enctype="multipart/form-data">
+                        
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">课程名：</label>
+                        <div class="layui-input-block" >
+                        <input type="text" name="kc_name" >    
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" >课程教师：</label>
+                        <div class="layui-input-block" >
+                        <input type="text" name="kc_tea">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                            <label class="layui-form-label">学生姓名：</label>
+                            <div class="layui-input-block" >
+                            <input type="text" name="kc_student">
+                            </div>
+                    </div>
+                    <div class="layui-form-item">
+                            <label class="layui-form-label">课程信息：</label>
+                            <div class="layui-input-block" >
+                            <input type="text" name="kc_describe" >    
+                            </div>
+                    </div>
+                    <div class="layui-form-item">
+                            <label class="layui-form-label">增加时间：</label>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label"> 开始时间: </label>
+                        <div class="layui-input-inline">
+                        <input type="text" name="kc_starttime" id="headimg" class="headimg">
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-form-text">
+                        <input type="submit" class="layui-btn" name="bt2"></input>
+                        <input type="reset" class="layui-btn layui-btn-primary"  name="bt1"></input>
+                </div>
+                    
+                </form>
+            </div>
+        </fieldset>
+        {include file="common/foot"}

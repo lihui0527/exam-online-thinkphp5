@@ -1,0 +1,26 @@
+{include file="common/top2"}
+<legend>选择科目</legend>
+<form  action="{:url('Student/kemu_judge')}" method="post" enctype="multipart/form-data"></form>
+<form  action="{:url('Student/kemu_judge')}" method="post" enctype="multipart/form-data">
+    <tr>
+    <td>科目：</br>
+        数学：<input type="radio" name="kemu" value="数学"></br>
+        语文：<input type="radio" name="kemu" value="语文"></br>
+        英语：<input type="radio" name="kemu" value="英语"></br>
+        政治：<input type="radio" name="kemu" value="政治"></br>
+    </td>教师：
+        <td><input type="text" value="" name="username" >
+        </td>
+    </tr></br>
+    
+    <tr>
+        <td>
+            <input type="reset" value="重置" name="bt1" >
+            <input type="submit" value="开始考试" name="bt2">
+        </td>
+    </tr>
+</form>
+
+   
+  <!-- 示例-970 -->
+{include file="common/foot"}

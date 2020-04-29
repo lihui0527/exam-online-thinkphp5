@@ -1,65 +1,63 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-
-		<link rel="stylesheet" href="/class1-2/public/style/base.css" type="text/css">
-		<link rel="stylesheet" href="/class1-2/public/style/global.css" type="text/css">
-		<link rel="stylesheet" href="/class1-2/public/style/header.css" type="text/css">
-		<link rel="stylesheet" href="/class1-2/public/style/index.css" type="text/css">
-		<link rel="stylesheet" href="/class1-2/public/style/bottomnav.css" type="text/css">
-		<link rel="stylesheet" href="/class1-2/public/style/footer.css" type="text/css">
-
-		<script type="text/javascript" src="/class1-2/public/static/js/jquery-1.8.3.min.js"></script>
-		<script type="text/javascript" src="/class1-2/public/static/js/header.js"></script>
-		<script type="text/javascript" src="/class1-2/public/static/js/index.js"></script>
-		<link rel="stylesheet" type="text/css" href="/class1-2/public/static/css/index.css">
-		<style type="">
-			.div1 {
-
-				vertical-align:middle;
-				text-align:center;
-				float: left;
-				width: 100px;
-				height:95%;
-			}
-			.div2{ float:left;width:99%;border:1px ; height:10px}
-		</style>
-
-
-	</head>
-	<body>
-		<div class="bg1"></div>
-		<div class="gyl">
-		        中国供应链金融
-		        
-		    <div class="gy2" >打造国内最具规模的、最专业的供应链金融服务平台 </div>   
-		</div>
-
-		<form action="{:url('index/login')}" method="post">
-		<div class="bg">
-			<div class="wel">用户登录</div>
-
-	        <div class="user">
-	       	    <div id="yonghu" style="">用户名</div>
-	       	    <input  type="text" name="username"  value="1" />
-	        </div>
-	        <div class="password" >
-	        	<div id="yonghu" >密&nbsp;&nbsp;&nbsp;码</div>
-	       	    <input class="" type="password" name="password" value="1" />
-	        </div>
-	        <input class="btn" type="submit" name="登录" value="登录" />
-		</div>
-			<div  >教师</div>
-			<input type="radio" name="quanxian" value="tea">
-			</div>
-			<div  >管理员</div>
-			<input type="radio" name="quanxian" value="admin">
-			</div>
-			<div  >学生</div>
-			<input type="radio" name="quanxian" value="stu">
-			</div>
-		</form>
-
-	</body>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>在线考试系统</title>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/layui/css/layui.css" media="all" />
+    <!-- <link rel="stylesheet" type="text/css" href="./../../../public/static/css/layui.css" media="all" /> -->
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/login.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="./../../../public/static/css//login.css" /> -->
+</head>
+<body class="beg-login-bg">
+    <div class="beg-login-box">
+        <header>
+            <h1>Online exam</h1>
+        </header>
+        <div class="beg-login-main">
+                
+            <form action="{:url('index/login')}" class="layui-form" method="post">
+                <div class="layui-form-item">
+                    <label class="beg-login-icon">
+                        <i class="layui-icon">&#xe612;</i>
+                    </label>
+                    <input type="text" lay-verify="required" name="username" autocomplete="off" placeholder="请输入账号" class="layui-input" lay-verType="tips">
+                </div>
+                <div class="layui-form-item">
+                    <label class="beg-login-icon">
+                        <i class="layui-icon">&#xe642;</i>
+                    </label>
+                    <input type="password" lay-verify="required" name="password" autocomplete="off" placeholder="请输入密码" class="layui-input" lay-verType="tips">
+                </div>
+                <div >
+                    <label ><input type="radio" name="quanxian" value="admin"/>管理员</label>
+                    <label ><input type="radio" name="quanxian" value="tea"/>教师</label>
+                    <label ><input type="radio" name="quanxian" value="stu"/>学生</label>
+                </div>
+                <div class="layui-form-item">
+                    <div class="beg-pull">
+                        <!-- <input type="submit" class="layui-btn layui-btn-normal" style="width:100%;" lay-submit lay-filter="formDemo"/> -->
+                        <!-- <button type="submit" class="layui-btn layui-btn-normal" style="width:100%;" lay-submit lay-filter="formDemo">
+                            登　　录
+                        </button> -->
+                        <input class="layui-btn layui-btn-normal" style="width:100%;" type="submit" name="登录" value="登录" />
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+        <footer>
+            <p> student-made @seaside </p>
+        </footer>
+    </div>
+    <script type="text/javascript" src="__STATIC__/javascript/jquery.min.js"></script> 
+    <script type="text/javascript" src="__STATIC__/javascript/layui.js"></script>
+    <script type="text/javascript" src="__STATIC__/javascript/sys_config.js"></script>
+    
+    <!-- <script type="text/javascript" src="./../../../public/static/javascript/jquery.min.js"></script> 
+    <script type="text/javascript" src="./../../../public/static/javascript/layui.js"></script>
+    <script type="text/javascript" src="./../../../public/static/javascript/sys_config.js"></script> -->
+    
+</body>
 </html>

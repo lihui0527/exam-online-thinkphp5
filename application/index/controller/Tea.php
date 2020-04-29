@@ -5,7 +5,7 @@ class Tea extends Controller
 {//入口
     public function tea_addym()
     {
-        return $this->fetch('/tea_add');
+        return $this->fetch('tea/tea_add');
     }
     public function tea_add(){
         $username=input('username');
@@ -23,15 +23,15 @@ class Tea extends Controller
         $userlist=model('tea');
 
         if($password!=$password1){
-            $this->error('俩次密码不一致请重新输入','tea/tea_add');
+            $this->error('俩次密码不一致请重新输入','tea/tea_addym');
         }
         $info=$userlist->tea_add($username,$password,$foname);
 
         if($info){
-            $this->success('注册成功','admin/yhgl');
+            $this->success('注册成功','admin/gl');
         }
         else{
-            $this->error('注册失败','admin/yhgl');
+            $this->error('注册失败','admin/gl');
         }
         /* if($userlist->validate(true)->allowField(true)->save($data)){
              $this->success('注册成功','index/index_3');
@@ -45,8 +45,10 @@ class Tea extends Controller
     {   $uid=input();
         $info=model('tea');
         $msginfo=$info->tea_lb($uid);
+        $page = $msginfo->render();
+        $this->assign('page',$page);
         $this->assign('message',$msginfo);
-        return $this->fetch('/tea_lb');
+        return $this->fetch('tea/tea_lb');
     }
     public function tea_delete()
     {
@@ -69,7 +71,7 @@ class Tea extends Controller
 
         $uid=input('uid');
         $this->assign('uid',$uid);
-        return $this->fetch('/tea_xg');
+        return $this->fetch('tea/tea_xg');
 
     }
     public function  tea_xg(){
@@ -92,13 +94,17 @@ class Tea extends Controller
     }
     ######  单选   ############3
     public function  add_exam(){
-        return $this->fetch('/tea_gl');
+        $username=session('username');
+        $userlist=model('kc');
+        $info=$userlist->kemu_select($username);
+        $this->assign('message',$info);
+        return $this->fetch('tea/tea_gl');
     }
     public function  add_exam2(){
-        return $this->fetch('/add_exam');
+        return $this->fetch('add/add_exam');
     }
     public function  add_exam3(){
-        return $this->fetch('/exam_class');
+        return $this->fetch('exam/exam_class');
     }
     public function  exam_add1(){
         $comment=input('comment');
@@ -120,9 +126,50 @@ class Tea extends Controller
             $this->error('注册失败','');
         }
     }
+    public function  exam_select(){
+        $nandu=input('nandu');
+        $lei=$_POST['lei'];
+        if($lei==4){
+            if($nandu==null){
+                $this->error('查询失败，请填写难度选项','tea/exam_show1');
+            }
+            $info=model('tea');
+            $msginfo=$info->exam_select_dan($nandu);
+            $this->assign('message',$msginfo);
+            return $this->fetch('exam/exam_select');
+        }
+        if($lei==5){
+            if($nandu==null){
+                $this->error('查询失败，请填写难度选项','tea/exam_show1');
+            }
+            $info=model('tea');
+            $msginfo=$info->exam_select_much($nandu);
+            $this->assign('message',$msginfo);
+            return $this->fetch('exam/exam_select_much');
+        }
+        if($lei==6){
+            if($nandu==null){
+                $this->error('查询失败，请填写难度选项','tea/exam_show1');
+            }
+            $info=model('tea');
+            $msginfo=$info->exam_select_judge($nandu);
+            $this->assign('message',$msginfo);
+            return $this->fetch('exam/exam_select_judge');
+        }
+        if($lei==7){
+            if($nandu==null){
+                $this->error('查询失败，请填写难度选项','tea/exam_show1');
+            }
+            $info=model('tea');
+            $msginfo=$info->exam_select_object($nandu);
+            $this->assign('message',$msginfo);
+            return $this->fetch('exam/exam_select_object');
+        }
+
+    }
     public function  exam_show1(){
 
-        return $this->fetch('/exam_show');
+        return $this->fetch('exam/exam_show');
     }
     public function  exam_show(){
         $kid=input();
@@ -131,7 +178,16 @@ class Tea extends Controller
         $page = $msginfo->render();
         $this->assign('page', $page);
         $this->assign('message',$msginfo);
-        return $this->fetch('/exam_lb');
+        return $this->fetch('exam/exam_lb');
+    }
+    public function  exam_show_all(){
+        $kid=input();
+        $info=model('tea');
+        $msginfo=$info->exam_lb_all($kid);
+        $page = $msginfo->render();
+        $this->assign('page', $page);
+        $this->assign('message',$msginfo);
+        return $this->fetch('exam/exam_lb');
     }
     public function  exam_delete(){
         $kid=input('kid');
@@ -149,7 +205,7 @@ class Tea extends Controller
     public function  exam_bj(){
         $kid=input('kid');
         $this->assign('kid',$kid);
-        return $this->fetch('/exam_xg');
+        return $this->fetch('exam/exam_xg');
     }
     public function exam_xg(){
         $kid=input('kid');
@@ -174,7 +230,7 @@ class Tea extends Controller
     ##############
     ######## 多选      ####################
     public function add_exam_much(){
-        return $this->fetch('/add_exam_much');
+        return $this->fetch('add/add_exam_much');
     }
     public function  add_exam_much1(){
         $comment=input('comment');
@@ -219,7 +275,7 @@ class Tea extends Controller
         $this->assign('page1', $page);
         $this->assign('message',$msginfo);
 
-        return $this->fetch('/exam_much_lb');
+        return $this->fetch('exam/exam_much_lb');
     }
     public function  exam_much_delete(){
         $cid=input('cid');
@@ -237,7 +293,7 @@ class Tea extends Controller
     public function  exam_much_bj(){
         $cid=input('cid');
         $this->assign('cid',$cid);
-        return $this->fetch('/exam_much_xg');
+        return $this->fetch('exam/exam_much_xg');
     }
     public function exam_much_xg(){
         $cid=input('cid');
@@ -261,7 +317,7 @@ class Tea extends Controller
     }
     #########判断题################
     public function exam_judge_add(){
-        return $this->fetch('/exam_judge_add');
+        return $this->fetch('exam/exam_judge_add');
     }
     public function  exam_judge_add1(){
         $comment=input('comment');
@@ -291,7 +347,7 @@ class Tea extends Controller
         $page = $msginfo->render();
         $this->assign('page', $page);
         $this->assign('message',$msginfo);
-        return $this->fetch('/exam_judge_lb');
+        return $this->fetch('exam/exam_judge_lb');
     }
     public function  exam_judge_delete(){
         $vid=input('vid');
@@ -309,7 +365,7 @@ class Tea extends Controller
     ####################################
     ##############主观题##############
     public function exam_object_add(){
-        return $this->fetch('/exam_object_add');
+        return $this->fetch('exam/exam_object_add');
     }
     public function exam_object_add1(){
         $comment=input('comment');
@@ -335,7 +391,7 @@ class Tea extends Controller
         $page = $msginfo->render();
         $this->assign('page', $page);
         $this->assign('message',$msginfo);
-        return $this->fetch('/exam_object_lb');
+        return $this->fetch('exam/exam_object_lb');
     }
     public function  exam_object_delete(){
         $qid=input('qid');

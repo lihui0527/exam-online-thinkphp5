@@ -1,0 +1,26 @@
+{include file="common/top1"}
+<legend>主观题</legend>
+<div class="layui-field-box" >
+    {volist name="message" id="list"}
+<form action="{:url('juan1/juan_object_pingfen')}?mid={$list.mid}" method="post" enctype="multipart/form-data">
+    <div class="layui-form-item">
+    {eq
+    name="$Think.session.uid" value="$list.uid"}
+    <td>{$list.comment}</td></br>
+    {/eq}
+   <tr> {/volist}</tr>
+    {volist name="message1" id="list"}
+    回答：<td>{$list.huida}</td></br>
+    评判：<input type="text" name="object_score[]" value="6"></br>
+    {eq
+    name="$Think.session.uid" value="$list.uid"}
+    {/eq}
+    {/volist}
+    </div>
+    <div class="layui-form-item layui-form-text">
+            <input type="submit" class="layui-btn" name="bt2"></input>
+            <input type="reset" class="layui-btn layui-btn-primary"  name="bt1"></input>
+        </div>
+</form>
+</div>
+{include file="common/foot"}

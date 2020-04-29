@@ -1,0 +1,24 @@
+{include file="common/top2"}
+<legend>成绩查询</legend>
+            <div class="layui-field-box">
+    <form action="" method="post" enctype="multipart/form-data">
+        {volist name="message" id="list"}
+        <tr>学生姓名：{$list.mid}</tr></br>
+        <tr>
+        单选：{$list.dan_score}
+    </tr></br>
+        <tr>
+            多选：{$list.duo_score}
+        </tr></br>
+        <tr>
+            判断：{$list.judge_score}
+        </tr></br>
+        <tr>
+            主观题：{$list.object_score}
+        </tr></br>
+        <tr>
+            总分：{$list.zong}
+        </tr></br>
+        {/volist}
+    </form>
+    {include file="common/foot"}

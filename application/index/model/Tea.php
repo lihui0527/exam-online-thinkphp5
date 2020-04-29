@@ -14,7 +14,7 @@ class Tea extends Model
         return $info;
     }
     public function tea_lb(){
-        $info=db('tea')->order('uid desc')->select();
+        $info=db('tea')->order('uid desc')->paginate(3);
         return $info;
     }
     public function sc($uid){
@@ -36,6 +36,26 @@ class Tea extends Model
     }
     public function exam_lb(){
         $info=db('tiku')->paginate(4);
+        return $info;
+    }
+    public function exam_lb_all(){
+        $info=db('tiku')->paginate(4);
+        return $info;
+    }
+    public function exam_select_dan($nandu){
+        $info=db('tiku')->where('nandu',$nandu)->select();
+        return $info;
+    }
+    public function exam_select_much($nandu){
+        $info=db('tiku_much')->where('nandu',$nandu)->select();
+        return $info;
+    }
+    public function exam_select_judge($nandu){
+        $info=db('tiku_judge')->where('nandu',$nandu)->select();
+        return $info;
+    }
+    public function exam_select_object($nandu){
+        $info=db('tiku_object')->where('nandu',$nandu)->select();
         return $info;
     }
     public function exam_sc($kid){
@@ -90,4 +110,5 @@ class Tea extends Model
         $info=db('tiku_object')->where('qid',$qid)->delete();
         return $info;
     }
+
 }

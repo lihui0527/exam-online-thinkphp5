@@ -1,14 +1,15 @@
 <?php
 namespace app\index\controller;
 use think\Controller;
-use Url;
+use think\Url;
 class Index extends Controller
 {//入口
     public function index()
-    {if(!strstr($_SERVER['REQUEST_URI'],'/index.php')) {
+    {
+        if(!strstr($_SERVER['REQUEST_URI'],'/index.php')) {
 
         Url::root('index.php');}
-        return $this->fetch('/login');
+        return $this->fetch('/login', ['seo'=>'1111']);
 
     }
     public function login(){
@@ -38,10 +39,10 @@ class Index extends Controller
         $info=$userlist->x($username,$password);
 
         if(!($info)){
-            return $this->error('密码错误','index/index_3');
+            return $this->error('密码错误','index/index');
         }
         else{
-
+            
             $this->success('管理员登陆成功','admin/gl');
         }
     }
@@ -51,12 +52,15 @@ class Index extends Controller
         $info=$userlist->x($username,md5($password));
 
         if(!($info)){
-            return $this->error('密码错误','index/index_3');
+            return $this->error('密码错误','index/index');
         }
         else{
                 session('uid',$info['uid']);
-
-            return $this->success('教师登陆成功','tea/add_exam');
+                session('username',$info['username']);
+            $kc_tea=session('username');
+            $userlist = model('student');
+            $info=$userlist->kc_select($kc_tea);
+            return $this->success('教师登陆成功','admin/gl1');
         }
     }
     public function dlyz1($username,$password){
@@ -65,11 +69,14 @@ class Index extends Controller
         $info=$userlist->x($username,md5($password));
 
         if(!($info)){
-            return $this->error('密码错误','index/index_3');
+            return $this->error('密码错误','index/index');
         }
         else{
-
-            $this->success('学生登陆成功','admin/gl');
+            session('mid',$info['mid']);
+            $userlist1=model('student');
+            $msginfo1=$userlist1->xs();
+            $this->assign('message1',$msginfo1);
+            $this->success('学生登陆成功','student/student');
         }
     }
     public function zc(){

@@ -1,0 +1,15 @@
+{include file="common/top"}
+<legend>创建试卷</legend>
+<div class="layui-field-box">
+<form action="{:url('library/library_add')}" method="post" enctype="multipart/form-data">
+    <h3 align="center">试卷信息</h3>
+    <tr>
+    科目：<input type="text" name="kemu" value="" ></br>
+    </tr></br>
+    <div class="layui-form-item layui-form-text">
+        <input type="submit" class="layui-btn" name="bt2"></input>
+        <input type="reset" class="layui-btn layui-btn-primary"  name="bt1"></input>
+    </div>
+</form>
+</div>
+{include file="common/foot"}

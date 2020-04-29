@@ -1,0 +1,31 @@
+{include file="common/top"}
+            <legend>修改学生信息</legend>
+            <div class="layui-field-box">
+                
+                <hr>
+                <form class="layui-form" action="{:url('xs/student_xg')}?mid={$mid}"  method="POST" enctype="multipart/form-data">
+                        
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" name="username">学生姓名：</label>
+                        <div class="layui-input-block" >
+                        <input type="text" name="username" >
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                        头像:<input type="file" name="headimg" id="headimg" >
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-form-text">
+                            <button type="submit" name="bt2">立即提交</button>
+                            <button type="reset" name="bt1">重置</button>
+                        <div class="layui-input-block">
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+        </fieldset>
+        {include file="common/foot"}
+
+

@@ -1,0 +1,24 @@
+{include file="common/top2"}
+<legend>单选题</legend>
+{volist name="message" id="list"}
+<form action="{:url('student/shiti_much')}" method="post" enctype="multipart/form-data"></form>
+<form action="{:url('student/shiti_much')}" method="post" enctype="multipart/form-data">
+
+    <td>{$list.kid}</td></br>
+    <td>{$list.comment}</td></br>
+    <td>{$list.a}<input type="radio" name="{$list.sid}" value="1" ></td></br>
+    <td>{$list.b}<input type="radio" name="{$list.sid}" value="2" ></td></br>
+    <td>{$list.c}<input type="radio" name="{$list.sid}" value="3" ></td></br>
+
+
+    {/volist}</tr>
+    <tr>
+
+        <td>
+            <input type="reset" value="重置" name="bt1" ></td>
+        <td>
+            <input type="submit" value="下一部分" name="bt2"></td>
+
+    </tr>
+</form>
+{include file="common/foot"}

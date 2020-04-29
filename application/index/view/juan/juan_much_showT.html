@@ -1,0 +1,19 @@
+{include file="common/top1"}
+<body>多选题{volist name="message1" id="list"}
+<form action="{:url('juan_select2')}" method="post" enctype="multipart/form-data">
+
+    <td>{$list.sid}{$list.comment}</td></br>
+    <td>{$list.a}<input type="checkbox" name="{$list.sid}" value="1" ></td></br>
+    <td>{$list.b}<input type="checkbox" name="{$list.sid}" value="2" ></td></br>
+    <td>{$list.c}<input type="checkbox" name="{$list.sid}" value="3" ></td></br>
+
+    {/volist}</tr>
+    <tr>
+        <td>
+            <input type="reset" value="重置" name="bt1" ></td>
+        <td>
+            <input type="submit" value="下一部分" name="bt2"></td>
+
+    </tr>
+</form>
+{include file="common/foot"}

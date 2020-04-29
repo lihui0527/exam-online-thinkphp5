@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<tr>
+    {volist name="message" id="list"}
+    <td>学生姓名：{$list.username}</td>
+    <td><a href="{:url('dajuant/add_role')}?mid={$list.mid}">添加到答题库</a></td>
+</tr>
+{/volist}
+</body>
+</html>

@@ -1,0 +1,34 @@
+{include file="common/top1"}
+<legend>查询多选</legend>  
+<div class="layui-field-box">
+    {volist name="message" id="list"}
+    <div class="layui-form-item">
+    {eq
+    name="$Think.session.uid" value="$list.uid"}
+    <td>{$list.comment}</td></br>
+    <td>{$list.a}</td></br>
+    <td>{$list.b}</td></br>
+    <td>{$list.c}</td></br>
+</div>
+    <div class="layui-form-item">
+        <a href="{:url('tea1/add_exam_much')}">继续添加</a>
+    {/eq}
+</div>
+
+    {/volist}
+</div>
+<!-- <br><tr>
+    {volist name="message" id="list"}
+    {eq
+    name="$Think.session.uid" value="$list.uid"}
+    <td>{$list.comment}</td></br>
+    <td>{$list.a}</td></br>
+    <td>{$list.b}</td></br>
+    <td>{$list.c}</td></br>
+    <td>
+        <a href="{:url('tea1/add_exam_much')}">继续添加</a>
+        </br>
+    </td>
+    {/eq}
+</tr>{/volist} -->
+{include file="common/foot"}

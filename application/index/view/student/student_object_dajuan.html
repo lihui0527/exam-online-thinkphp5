@@ -1,0 +1,74 @@
+{include file="common/top2"}
+<legend>单选题</legend>
+<div class="layui-field-box">
+{volist name="message" id="list"}
+<form action="" method="post" enctype="multipart/form-data"><tr>
+
+    <div class="layui-form-item">
+    <td>{$list.comment}</td></br>
+    <td>{$list.a}</td></br>
+    <td>{$list.b}</td></br>
+    <td>{$list.c}</td></br>
+</div>
+
+{/volist}
+<tr>{volist name="message1" id="list"}
+
+
+    <div class="layui-form-item">
+    <td>题号：{$list.kid}</td>
+    <td>回答：({$list.huida})</td></br>
+</div>
+    {/volist}
+</tr>
+<tr>{volist name="message2" id="list"}
+    <div class="layui-form-item">
+    <td>题号：{$list.kid}</td>
+    正确答案：<td>({$list.daan})</td></br>
+</div>
+    {/volist}
+</tr>
+    <div class="layui-form-item">
+            <a href="{:url('student/student')}">退出</a>
+    </div>
+</form>
+</div>
+</fieldset>
+{include file="common/foot"}
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+主观题：</br>
+{volist name="message" id="list"}
+<form action="" method="post" enctype="multipart/form-data"><tr>
+
+
+    <td>{$list.comment}</td></br>
+    <td>{$list.a}</td></br>
+
+</tr>
+
+    {/volist}
+    <tr>{volist name="message1" id="list"}
+
+        <td>题号：{$list.qid}</td>
+        <td>回答：({$list.huida})</td></br>
+
+        {/volist}
+    </tr></br>
+    <tr>{volist name="message2" id="list"}
+        <td>题号：{$list.qid}</td>
+        正确答案：<td>({$list.daan})</td></br>
+
+        {/volist}
+    </tr>
+    <tr>
+        <a href="{:url('student/student')}">退出</a>
+    </tr>
+</form>
+</body>
+</html> -->

@@ -30,4 +30,16 @@ class Xs extends Model {
         $info=db('xs')->where('username',$username)->where('password',$password)->find();
         return $info;
     }
+    public function xs_username($name){
+        $info=db('xs')->where('username',$name)->select();
+        return $info;
+    }
+//    public function tea_name($uid){
+//        $info=db('tea')->where('username',$uid)->select();
+//        return $info;
+//    }
+    public function xs_name($username){
+        $info=db('kc')->where('kc_tea',$username)->select();
+        return $info;
+    }
 }

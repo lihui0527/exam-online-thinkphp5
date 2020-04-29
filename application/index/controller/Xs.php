@@ -24,15 +24,15 @@ class Xs extends Controller
 
         $mid=input('mid');
         $this->assign('mid',$mid);
-        return $this->fetch('/student_xg');
+        return $this->fetch('student/student_xg');
 
     }
     public function  student_xg(){
         $mid=input('mid');
         $username=input('username');
-
         $foname=input('foname');
         $headimg = request()->file('headimg');
+
         if($headimg){
             $fo = $headimg->move('./static');
             $foname=$fo->getSaveName();
